@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!--
+    FILE: checkout.html
+    SRM CART — Checkout & Payment Page
+    OOP Concepts Shown:
+      - Abstraction  : Payment is an abstract class with pure virtual pay()
+      - Polymorphism : UPIPayment and CardPayment implement pay() differently
+      - Encapsulation: Order class stores private order data
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRM Cart — Checkout</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+    <h1>🛒 SRM Cart</h1>
+    <p class="tagline">SRM Institute of Science and Technology — OOP Project</p>
+    <nav>
+        <a href="index.html">Products</a>
+        <a href="cart.html" id="cart-badge">Cart (0)</a>
+        <a href="checkout.html">Checkout</a>
+    </nav>
+</header>
+
+<!-- ===== MAIN CONTENT ===== -->
+<main>
+
+    <h2>Checkout</h2>
+
+    <!-- ===== ORDER SUMMARY SECTION ===== -->
+    <div class="checkout-section">
+        <h3 style="font-size:15px; margin-bottom:8px; color:#003366;">Order Summary</h3>
+
+
+        <div id="order-summary">
+            <!-- Populated by app.js renderCheckoutSummary() -->
+        </div>
+    </div>
+
+    <hr style="margin: 20px 0; border-color: #cccccc;">
+
+    <!-- ===== CUSTOMER INFO SECTION ===== -->
+    <div class="checkout-section">
+        <h3 style="font-size:15px; margin-bottom:8px; color:#003366;">Customer Information</h3>
+
+        <table style="width:auto;">
+            <tr>
+                <th>Name</th>
+                <td id="cust-name">—</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td id="cust-email">—</td>
+            </tr>
+            <tr>
+                <th>Role</th>
+                <td>Customer</td>
+            </tr>
+        </table>
+    </div>
+
+    <hr style="margin: 20px 0; border-color: #cccccc;">
+
+    <!-- ===== PAYMENT SECTION ===== -->
+    <div class="checkout-section">
+        <h3 style="font-size:15px; margin-bottom:8px; color:#003366;">Payment</h3>
+
+        <div class="form-group">
+            <label for="payment-method">Select Payment Method:</label>
+            <select id="payment-method" onchange="togglePaymentFields()">
+                <option value="upi">UPI Payment</option>
+                <option value="card">Card Payment</option>
+            </select>
+        </div>
+
+        <!-- UPI Fields — shown when UPI selected -->
+        <div id="upi-fields">
+            <div class="form-group">
+                <label for="upi-id">UPI ID:</label>
+                <input type="text" id="upi-id" placeholder="e.g. yourname@upi" value="ravi@okhdfcbank">
+            </div>
+        </div>
+
+        <!-- Card Fields — shown when Card selected -->
+        <div id="card-fields" style="display:none;">
+            <div class="form-group">
+                <label for="card-holder">Card Holder Name:</label>
+                <input type="text" id="card-holder" placeholder="Name on card" value="Ravi Kumar">
+            </div>
+            <div class="form-group">
+                <label for="card-last4">Last 4 Digits of Card:</label>
+                <input type="text" id="card-last4" placeholder="e.g. 1234" maxlength="4" value="7842">
+            </div>
+        </div>
+
+        <br>
+        <button id="pay-btn" onclick="processPayment()">Place Order &amp; Pay</button>
+    </div>
+
+    <!-- ===== PAYMENT RESULT ===== -->
+    <div id="payment-result"></div>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    SRM Cart &mdash; OOP Project | Developed using C++ OOP Concepts (Encapsulation, Inheritance, Abstraction, Polymorphism)
+</footer>
+
+<script src="app.js"></script>
+<script>
+    // Populate customer info from the Customer (inherits User) object
+    document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("cust-name").textContent  = currentUser.getName();
+        document.getElementById("cust-email").textContent = currentUser.getEmail();
+    });
+</script>
+</body>
+</html>

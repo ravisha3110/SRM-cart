@@ -1,0 +1,245 @@
+/*
+ * ============================================================
+ *  FILE: style.css
+ *  SRM Cart — Simple, student-project style CSS
+ *  Minimal styling, no animations, no fancy UI
+ * ============================================================
+ */
+
+/* ----- Reset & Base ----- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    background-color: #f5f5f5;
+    color: #222;
+}
+
+/* ----- Header / Nav ----- */
+header {
+    background-color: #003366;
+    color: white;
+    padding: 12px 20px;
+}
+
+header h1 {
+    font-size: 22px;
+    display: inline;
+}
+
+header p.tagline {
+    font-size: 12px;
+    color: #aaccff;
+    margin-top: 2px;
+}
+
+nav {
+    margin-top: 8px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 16px;
+    font-size: 14px;
+    padding: 4px 8px;
+    border: 1px solid #aaaacc;
+    border-radius: 3px;
+}
+
+nav a:hover {
+    background-color: #0055aa;
+}
+
+#cart-badge {
+    background-color: #ffcc00;
+    color: #003366;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+/* ----- Main Container ----- */
+main {
+    max-width: 960px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border: 1px solid #cccccc;
+}
+
+h2 {
+    font-size: 18px;
+    border-bottom: 2px solid #003366;
+    padding-bottom: 6px;
+    margin-bottom: 14px;
+    color: #003366;
+}
+
+/* ----- OOP Info Box ----- */
+.oop-box {
+    background-color: #eef4ff;
+    border-left: 4px solid #003366;
+    padding: 10px 14px;
+    margin-bottom: 16px;
+    font-size: 13px;
+}
+
+.oop-box strong {
+    color: #003366;
+}
+
+/* ----- Tables ----- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+thead {
+    background-color: #003366;
+    color: white;
+}
+
+th, td {
+    padding: 8px 10px;
+    border: 1px solid #cccccc;
+    text-align: left;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f0f4ff;
+}
+
+/* ----- Buttons ----- */
+button {
+    background-color: #003366;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 13px;
+    border-radius: 3px;
+}
+
+button:hover {
+    background-color: #0055aa;
+}
+
+button.remove-btn {
+    background-color: #cc0000;
+}
+
+button.remove-btn:hover {
+    background-color: #aa0000;
+}
+
+/* ----- Messages ----- */
+#msg {
+    display: none;
+    background-color: #d4edda;
+    border: 1px solid #28a745;
+    color: #155724;
+    padding: 8px 12px;
+    margin-bottom: 12px;
+    border-radius: 3px;
+    font-size: 13px;
+}
+
+/* ----- Cart Total ----- */
+#cart-total {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 12px;
+    color: #003366;
+}
+
+#empty-msg {
+    color: #777;
+    text-align: center;
+    padding: 20px;
+}
+
+/* ----- Checkout ----- */
+.checkout-section {
+    margin-bottom: 20px;
+}
+
+.checkout-total {
+    font-size: 16px;
+    font-weight: bold;
+    color: #003366;
+    margin-top: 10px;
+}
+
+.form-group {
+    margin-bottom: 12px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.form-group input,
+.form-group select {
+    width: 280px;
+    padding: 6px 8px;
+    border: 1px solid #aaaaaa;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+#upi-fields, #card-fields {
+    background-color: #f8f8f8;
+    border: 1px solid #cccccc;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 3px;
+}
+
+/* ----- Success Box ----- */
+.success-box {
+    background-color: #d4edda;
+    border: 1px solid #28a745;
+    padding: 16px;
+    border-radius: 4px;
+    margin-top: 16px;
+}
+
+.success-box h3 {
+    color: #155724;
+    margin-bottom: 10px;
+}
+
+.success-box p {
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+.success-box a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #003366;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* ----- Footer ----- */
+footer {
+    text-align: center;
+    font-size: 12px;
+    color: #888;
+    padding: 14px;
+    border-top: 1px solid #cccccc;
+    margin-top: 30px;
+}

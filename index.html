@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+    FILE: index.html
+    SRM CART — Product List Page
+    OOP Concept Shown: Polymorphism (displayInfo() via Electronics/Clothing)
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRM Cart — Browse Products</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+    <h1>🛒 SRM Cart</h1>
+    <p class="tagline">SRM Institute of Science and Technology — OOP Project</p>
+    <nav>
+        <a href="index.html">Products</a>
+        <a href="cart.html" id="cart-badge">Cart (0)</a>
+        <a href="checkout.html">Checkout</a>
+    </nav>
+</header>
+
+<!-- ===== MAIN CONTENT ===== -->
+<main>
+
+    <h2>Product Catalogue</h2>
+
+    <!-- Flash message -->
+    <div id="msg"></div>
+
+    <!-- Product table -->
+    <table id="product-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Product Name</th>
+                <th>Type</th>
+                <th>Price</th>
+                <th>Extra Info</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="product-tbody">
+            <!-- Rows populated by app.js renderProducts() -->
+        </tbody>
+    </table>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    SRM Cart &mdash; OOP Project | Developed using C++ OOP Concepts (Encapsulation, Inheritance, Abstraction, Polymorphism)
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
